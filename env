@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+export OPENLANE_TAG=2023.06.26
+export OPENLANE_IMAGE_NAME=docker.io/efabless/openlane:3bc9d02d0b34ad032921553e512fbe4bebf1d833-amd64
+export OPENLANE_ROOT=$(pwd)/OpenLane
+export PDK_ROOT=$(pwd)/PDK
+export PDK=sky130A
+
+# Create and activate python venv
+if [ ! -d ".venv" ]; then
+    python3 -m venv .venv
+fi
+. .venv/bin/activate
